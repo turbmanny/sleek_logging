@@ -34,12 +34,12 @@ def log_newline(h, nof_lines:int=1) -> None:
         
     return
 
-def create_logger(name:str, fname:str):
+def create_logger(fname:str, name:str="sleek_logger"):
     
     # # Create a console handler
     # console_handler = logging.StreamHandler()
     # console_handler.setLevel(logging.DEBUG)
-    # console_handler.setFormatter(logging.Formatter(fmt="%(name)s %(levelname)-8s: %(message)s"))
+    # console_handler.setFormatter(logging.Formatter(fmt="%(funcName)s %(levelfuncName)-8s: %(message)s"))
 
     # Create a "blank line" handler
     blank_handler = logging.StreamHandler()
@@ -47,11 +47,10 @@ def create_logger(name:str, fname:str):
     blank_handler.setFormatter(logging.Formatter(fmt=''))
     
     # Create a file handler (for writing to a file)
-    fname        = "C:\\git\\mysandbox\\logging_practice\\%s" % fname
     file_handler = logging.FileHandler(filename=fname,
                                        mode="w", encoding="utf-8")
     file_handler.setLevel(logging.INFO)
-    file_handler.setFormatter(logging.Formatter(fmt="%(asctime)s - %(name)s %(levelname)-8s: %(message)s"))
+    file_handler.setFormatter(logging.Formatter(fmt="%(asctime)s - %(funcName)s %(levelname)-8s: %(message)s"))
 
     # Create a logger, with the previously-defined handler
     logger = logging.getLogger(name=name)
