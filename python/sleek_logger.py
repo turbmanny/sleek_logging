@@ -14,7 +14,6 @@ I also included a file handler.
 
 import logging
 import types
-import inspect
 
 def log_newline(h, nof_lines:int=1) -> None:
     
