@@ -9,7 +9,7 @@ This code is taken by:
     https://stackoverflow.com/questions/20111758/how-to-insert-newline-in-python-logging
     
 I included a file handler.
-Also, I included function that is executed in logging files.
+Also, in the logging files, the function that is executed is added.
 
 """
 
